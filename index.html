@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>大老爺 - 安裝頁面</title>
+  
+    <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+  
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text",
+                   "Segoe UI", system-ui, sans-serif;
+    }
+
+    body {
+      background: #050508;
+      color: #ffffff;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      padding: 16px;
+    }
+
+    .page {
+      width: 100%;
+      max-width: 480px;
+      margin: auto;
+    }
+
+    .card {
+      background: #101018;
+      border-radius: 22px;
+      padding: 18px 16px 20px;
+      box-shadow: 0 16px 36px rgba(0,0,0,0.75);
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .top-row {
+      display: flex;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+
+    .icon {
+      width: 120px;
+      height: 120px;
+      border-radius: 16px;
+      overflow: hidden;
+      margin-right: 14px;
+      flex-shrink: 0;
+      background: #000000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 30px;
+      color: #1a1204;
+    }
+    .icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .app-main-info {
+      flex: 1;
+    }
+    .app-title {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    .app-subtitle {
+      font-size: 12px;
+      color: #a8afbd;
+    }
+
+    .btn-row {
+      margin-top: 10px;
+    }
+    .btn {
+      width: 100%;
+      border-radius: 999px;
+      border: none;
+      padding: 10px 0;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .btn-primary {
+      background: #0a84ff;
+      color: #ffffff;
+    }
+
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      margin: 18px 0 16px;
+      text-align: center;
+      font-size: 11px;
+      color: #cfd3dd;
+    }
+
+    .stats-item-title {
+      font-size: 10px;
+      color: #8a92a2;
+      margin-bottom: 4px;
+    }
+
+    .big-score {
+      font-size: 20px;
+      font-weight: 600;
+    }
+
+    .star-line {
+      height: 6px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #ffcc48 0, #ffcc48 70%, #2b2f3a 70%);
+      margin: 6px 0;
+    }
+
+    .section {
+      margin-bottom: 18px;
+    }
+    .section-title {
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    .intro-text {
+      font-size: 13px;
+      color: #d5dae6;
+      line-height: 1.5;
+    }
+
+    .rating-block {
+      background: #181821;
+      border-radius: 16px;
+      padding: 12px;
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .rating-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .rating-left {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .rating-small-star {
+      color: #ffcc48;
+      letter-spacing: 1px;
+      font-size: 12px;
+    }
+
+    .rating-total {
+      font-size: 11px;
+      color: #8f96a5;
+    }
+
+    .review-card {
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .review-title-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 4px;
+      font-size: 12px;
+    }
+
+    .review-name {
+      font-size: 11px;
+      color: #c2c9d6;
+    }
+
+    .review-text {
+      font-size: 11px;
+      color: #d5dae6;
+      line-height: 1.5;
+    }
+
+    .info-list {
+      background: #181821;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.06);
+      padding: 10px 12px;
+      font-size: 12px;
+    }
+
+    .info-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 6px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
+    .info-row:last-child {
+      border-bottom: none;
+    }
+
+    .info-label {
+      color: #9aa0b3;
+    }
+
+    .info-value {
+      color: #e1e5f2;
+    }
+
+    .disclaimer {
+      font-size: 11px;
+      color: #8b93a3;
+      margin-top: 8px;
+      line-height: 1.5;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="card">
+      <!-- 上半部：icon + 名稱 + 按鈕 -->
+      <div class="top-row">
+        <div class="icon">
+          <!-- TODO：如有 icon 圖片，用 <img src="icon.png"> -->
+            <img src="icons/icon.png" alt="App Icon">
+        </div>
+        <div class="app-main-info">
+          <div class="app-title">大老爺</div>
+          <div class="app-subtitle">高品質遊戲體驗，立即安裝</div>
+
+          <div class="btn-row">
+            <button class="btn btn-primary" id="install-btn">免費安裝</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 中間統計數據 -->
+      <div class="stats-row">
+        <div>
+          <div class="stats-item-title">評分</div>
+          <div class="big-score">4.9</div>
+          <div class="rating-small-star">★★★★★</div>
+          <div class="rating-total">10088 個評分</div>
+        </div>
+        <div>
+          <div class="stats-item-title">年齡</div>
+          <div style="margin-top:8px;">18+ 歲</div>
+        </div>
+        <div>
+          <div class="stats-item-title">排行榜</div>
+          <div style="margin-top:8px;">#1 應用</div>
+        </div>
+        <div>
+          <div class="stats-item-title">大小</div>
+          <div style="margin-top:8px;">2.87 MB</div>
+        </div>
+      </div>
+
+      <!-- 簡介 -->
+      <div class="section">
+        <div class="section-title">簡介</div>
+        <p class="intro-text">
+          大老爺 是一款免費版的 App，由專業團隊打造，為您提供流暢、清晰的視覺體驗與最佳操作感受。
+        </p>
+      </div>
+
+      <!-- 評分及評論 -->
+      <div class="section">
+        <div class="section-title">評分及評論</div>
+        <div class="rating-block">
+          <div class="rating-header">
+            <div class="rating-left">
+              <span class="big-score">4.9</span>
+              <span class="rating-small-star">★★★★★</span>
+              <span class="rating-total">滿分 5 分．10088 個評分</span>
+            </div>
+            <div style="flex:1; margin-left:12px;">
+              <div class="star-line"></div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-title-row">
+              <span>Very good app, recommended!</span>
+              <span style="font-size:11px;color:#8f96a5;">11-16</span>
+            </div>
+            <div style="font-size:11px;color:#ffcc48;margin-bottom:4px;">★★★★★</div>
+            <div class="review-name">James Levine</div>
+            <div class="review-text" style="margin-top:4px;">
+              This app is really easy to use, the app is smooth and not stuck,
+              the picture is clear, the operation is simple and convenient.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 資訊 -->
+      <div class="section">
+        <div class="section-title">信息</div>
+        <div class="info-list">
+          <div class="info-row">
+            <span class="info-label">供應商</span>
+            <span class="info-value">大老爺</span>
+          </div>
+          <div class="info-row">
+            <span class="info-label">安裝包大小</span>
+            <span class="info-value">2.87M</span>
+          </div>
+          <div class="info-row">
+            <span class="info-label">版本</span>
+            <span class="info-value">V2.0.12</span>
+          </div>
+          <div class="info-row">
+            <span class="info-label">兼容性</span>
+            <span class="info-value">iOS 9.0 或更高版本</span>
+          </div>
+          <div class="info-row">
+            <span class="info-label">語言</span>
+            <span class="info-value">繁體中文</span>
+          </div>
+          <div class="info-row">
+            <span class="info-label">年齡分級</span>
+            <span class="info-value">限 18 歲以上</span>
+          </div>
+          <div class="info-row">
+            <span class="info-label">價格</span>
+            <span class="info-value">免費</span>
+          </div>
+        </div>
+
+        <p class="disclaimer">
+          免責聲明：本網站僅提供下載託管，App 內容相關事項由開發者負責，與本網站無關。
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // TODO：把這個改成你要導向的網址
+    const INSTALL_URL = 'https://your-install-url.com';
+
+    document.getElementById('install-btn').addEventListener('click', () => {
+      window.location.href = "/download/pwa/";
+    });
+  </script>
+</body>
+</html>
