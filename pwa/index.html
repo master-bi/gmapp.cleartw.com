@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>大老爺</title>
+  <title>雄厚</title>
 
   <!-- iOS PWA 必備 -->
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="大老爺">
+  <meta name="apple-mobile-web-app-title" content="雄厚">
 
   <!-- PWA 設定 -->
   <link rel="manifest" href="manifest.webmanifest">
@@ -98,7 +98,7 @@
 <body>
 
   <div>
-    <h2>大老爺</h2>
+    <h2>雄厚</h2>
     <p>即將為您啟動應用</p>
     <button class="btn" id="go">立即前往</button>
     <p id="info"></p>
@@ -130,7 +130,7 @@
   </div>
 
 <script>
-  const TARGET_URL = "https://ag223.gm89.net/login?id=register";
+  const TARGET_URL = "https://xx168.ofa918.net/login?id=register";
 
   // 1. 註冊 Service Worker
   if ("serviceWorker" in navigator) {
@@ -175,7 +175,7 @@
             const choiceResult = await deferredPrompt.userChoice;
 
             if (choiceResult.outcome === "accepted") {
-              alert("已送出安裝，請回到手機主畫面，找到「大老爺」圖示開啟。");
+              alert("已送出安裝，請回到手機主畫面，找到「雄厚」圖示開啟。");
               return; // 不跳官網，讓使用者去桌面找 APP
             }
           } catch (err) { console.error(err); }
